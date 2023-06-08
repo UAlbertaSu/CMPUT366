@@ -17,4 +17,5 @@
 
 > ### **Assignment 4**
 > - Tic Tac Toe with First Available and MRV 
+> - Constraint satisfaction 
 
