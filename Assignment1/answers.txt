@@ -1,0 +1,33 @@
+Algo is in main.py
+
+1. Why is the overall distribution of points in the plot the way it is?
+
+    Dijkstra's algorithm is a greedy algorithm. It is greedy because
+    it always chooses the cheapest path to the next node. 
+    This means that as each path is getting more expensive, the algorithm will expand nodes that were originally 
+    not part of the cheapest path. 
+
+    BIBS however is essentially 2 Dijkstra's going from start and goal. 
+    Although the difference in expanded nodes between the two algo is not that big,
+    the fact that we are skipping over expanding further nodes when the 2 searches meet up
+    saves the algorithm a few iteration since when the search of backward and forward meets,
+    it is guaranteed that the path it intersects with is the cheapest of the paths in their perspective direction.
+
+
+2.  why some of the points are clearly below the main diagonal?
+
+    below the diagonal means that BIBS expanded more nodes than Dijkstra's. 
+    This can occur when the start and goal state is relatively close, with no obstacles. 
+    Since BIBS is essentially 2 Dijkstra's going from start and goal, it will expand more than if just one Dijkstra
+    was used.
+
+3. Why some of the points are clearly above the main diagonal?
+
+    above the diagonal means that BIBS expanded less nodes than Dijkstra's. 
+    This can occur when the start and goal state is relatively far, with deadends and obstacles. 
+    Dijkstras algorithm will expand from start where if an obstacle or deadend is encountered, 
+    will have to backtrack and expand more node until goal is found
+
+    BIBS will expand from both ends, where if a dead end or obstacle is met, will backtrack but only expand
+    until the 2 directions intersect. 
+  
